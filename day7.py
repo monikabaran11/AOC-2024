@@ -18,8 +18,8 @@ print(combination_lst)
 
 total_calibration_lst=[]
 operations=['+', '*']
-index = 0
-for element in combination_lst:
+
+for index, element in enumerate(combination_lst):
     operator_combinations = product(operations, repeat=len(element) - 1)
 
     for ops in operator_combinations:
@@ -29,8 +29,8 @@ for element in combination_lst:
 
         if eval(expression) == result_lst[index]:
             total_calibration_lst.append(result_lst[index])
-
-    index = index +1
+            break
+    
 
 print(total_calibration_lst)
 print(sum(total_calibration_lst))
